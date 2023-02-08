@@ -1,0 +1,19 @@
+Plot[{Sin[x],2Cos[x]},{x,-2\[Pi],2\[Pi]},
+AspectRatio ->Automatic,
+Ticks->{{-2\[Pi],-\[Pi],-\[Pi]/2,\[Pi]/2,\[Pi],2\[Pi]},{-2,-1,1,2}},
+AxesLabel->{"x","y"},
+PlotStyle->{Blue,Red},
+GridLines->{{-\[Pi],\[Pi]},{-1,1}},
+PlotLabel->"Minu siinused",
+Frame->True,
+FrameTicks->{{-2\[Pi],-\[Pi],-\[Pi]/2,\[Pi]/2,\[Pi],2\[Pi]},{-2,-1,1,2}},
+PlotLegends->"Expressions"]
+
+ParametricPlot[{{4Cos[t],2Sin[t]},{2Cos[t],2Sin[t]}},{t,0,2\[Pi]}]
+
+Plot[{Sqrt[4-x^2],-Sqrt[4-x^2]},{x,-2,2}]
+
+n=3;
+ParametricPlot[{\[Rho] Cos[\[CurlyPhi]],\[Rho] Sin[\[CurlyPhi]]} /. \[Rho]->Sin[n \[CurlyPhi]],{\[CurlyPhi],0,2\[Pi]}]
+
+PolarPlot[Sin[n \[CurlyPhi]],{\[CurlyPhi],0,2\[Pi]}]

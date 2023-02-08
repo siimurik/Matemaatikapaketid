@@ -1,0 +1,37 @@
+Ülesanne 1
+P = {-2,3,-2};
+tasand=x-3y+2z-3;
+X={x,y,z};
+n=Coefficient[tasand,X]
+sirge=Table[X[[i]]->P[[i]]+t*n[[i]],{i,1,3}]
+tasand /. sirge
+Expand[%]
+Solve[% == 0,t][[1]]
+t -> {2 t /. %}
+X /. {sirge /. %}
+
+Ülesanne 2
+P = {1,2,3};
+sirge = {x -> 8 + t, y -> 11 + 3  t, z -> 4 - t};
+X = {x,y,z};
+n = Coefficient[X /. sirge,t]
+tasand = Expand[n.(X-P)]
+Expand[tasand /. sirge]
+Solve[% == 0, t][[1]]
+L = X /. (sirge /. %)
+P + 2(L-P)
+
+Ülesanne 3
+joon = a11 x^2+2 a12 x y + a22 y^2+2 a1 x+2 a2 y+a0
+A=CoefficientList[joon,{x,y}];
+A//MatrixForm
+teisendus = {x->u Cos[\[Alpha]]-v Sin[\[Alpha]]+p, y->u Sin[\[Alpha]]+v Cos[\[Alpha]]+q};
+bjoon=Expand[joon /. teisendus]
+B=CoefficientList[bjoon,{u,v}]
+B // MatrixForm
+{"I1",Simplify[A[[3,1]]+A[[1,3]] == A[[3,1]]+A[[1,3]]]}
+
+{"I2",Simplify[Det[{{A[[3,1]],1/2A[[2,2]]},{1/2A[[2,2]],A[[1,3]]}}] ==
+Det[{{B[[3,1]],1/2B[[2,2]]},{1/2B[[2,2]],B[[1,3]]}}]]}
+{"I3",Simplify[Det[{{A[[3,1]],1/2A[[2,2]],1/2A[[2,1]]},{1/2A[[2,2]],A[[1,3]],1/2A[[1,2]]},{1/2A[[2,1]],1/2A[[1,2]],A[[1,1]]}}]==
+Det[{{B[[3,1]],1/2B[[2,2]],1/2B[[2,1]]},{1/2B[[2,2]],B[[1,3]],1/2B[[1,2]]},{1/2B[[2,1]],1/2B[[1,2]],B[[1,1]]}}]]}
